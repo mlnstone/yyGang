@@ -46,7 +46,7 @@ kubectl argo rollouts undo rollout rollout-bluegreen -n bluegreen-test
 Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확장하거나 축소**할 수 있는 다양한 오토스케일링 기능을 제공합니다.
 
 <details>
-<summary>▶ Karpenter</summary>
+<summary>Karpenter</summary>
 
 ### 1. 노드 생성
 
@@ -66,7 +66,7 @@ Karpenter는 노드 생성/삭제 시 **직접 Pod를 스케쥴링**합니다.
 </details>
 
 <details>
-<summary>▶ HPA (Horizontal Pod Autoscaler)</summary>
+<summary>HPA (Horizontal Pod Autoscaler)</summary>
 
 ✍️ 내용은 추후 작성 예정입니다.
 
