@@ -2,31 +2,66 @@
 
 Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확장하거나 축소**할 수 있는 다양한 오토스케일링 기능을 제공합니다.
 
-<details>
-<summary><strong>Karpenter</strong></summary>
+---
 
-![image](https://github.com/user-attachments/assets/ef9bb4fd-2d13-46c3-b0bf-198991b001bd)
+## ✅ 주요 오토스케일링 구성 요소
 
-1. HPA에 의해 자동확장 또는 재배포되어 새로운 Pod가 생성됩니다.
-2. Kube-scheduler는 기존 Worker node에 새로운 Pod를 할당하려 합니다.
-3. 기존 Worker node에 자원이 부족해 Pod는 Pending 상태가 됩니다.  
-4. Karpenter는 Pending 상태의 Pod를 감지하고 새로운 Worker node를 생성합니다.
-5. Kube-scheduler가 새 Worker node에 Pending Pod를 배포합니다.  
+### 🔹 Karpenter  
+노드 수준의 오토스케일링을 담당하며, Pod가 스케줄되지 못하고 Pending 상태일 때 **자동으로 새로운 Worker Node를 생성**합니다.
 
-### ✅ 장점  
-- 노드 프로비저닝과 Pod의 노드 바인딩을 직접 처리  
-- 스케일링 속도가 빠르고  
-- 파드 요구사항에 맞는 최적 노드 생성  
-- 비용 절감 효과
+![karpenter](https://github.com/user-attachments/assets/ef9bb4fd-2d13-46c3-b0bf-198991b001bd)
 
-</details>
+#### ⚙️ 작동 흐름
 
-<details>
-<summary><strong>HPA (Horizontal Pod Autoscaler)</strong></summary>
+1. **HPA가 Pod를 자동 확장** 또는 재배포합니다.
+2. **Kube-scheduler**가 기존 Node에 Pod를 스케줄링하려 시도합니다.
+3. 기존 Node에 자원이 부족해 Pod는 **Pending 상태**가 됩니다.
+4. **Karpenter가 Pending 상태의 Pod를 감지**하고, 새로운 Worker Node를 **자동 생성**합니다.
+5. **Kube-scheduler가 새 Node에 Pod를 스케줄링**합니다.
 
-✍️ 내용은 추후 작성 예정입니다.
+#### ✅ 장점
 
-</details>
+- 노드 프로비저닝과 Pod 스케줄링을 자동으로 처리
+- 스케일링 속도가 빠름
+- Pod 요구사항에 최적화된 노드 생성
+- 불필요한 노드 종료로 **비용 절감 효과**
+
+---
+
+### 🔹 HPA (Horizontal Pod Autoscaler)  
+리소스 사용량(CPU, 메모리 등)에 따라 **Pod 개수를 수평적으로 자동 조절**합니다.
+
+> 예: CPU 사용률이 70%를 넘으면 Pod 수를 증가시킴
+
+#### ⚙️ 작동 흐름
+
+1. HPA는 설정된 리소스 기준(CPU, 메모리)을 지속적으로 모니터링합니다.
+2. 사용량이 기준을 초과하거나 미달하면 **Replica 수를 자동 조절**합니다.
+3. Deployment 또는 ReplicaSet의 `replicas` 수를 변경해 Pod 수를 늘리거나 줄입니다.
+
+#### ✅ 장점
+
+- 트래픽 급증 시 자동으로 확장하여 안정성 유지
+- 리소스 낭비 없이 효율적인 운영 가능
+- 다양한 메트릭(Custom Metrics 포함)을 기반으로 동작
+
+---
+
+## 💡 HPA + Karpenter 조합
+
+- HPA는 Pod 수를 조절  
+- Karpenter는 Pod를 수용할 수 있도록 **노드를 자동 생성/삭제**  
+→ **Pod와 Node 모두 유연하게 확장/축소 가능**
+
+---
+
+## ✨ 예시 명령어
+
+### HPA 생성
+
+```bash
+kubectl autoscale deployment my-app --cpu-percent=50 --min=2 --max=10
+```
 
 # 무중단 배포  
 ## 블루/그린 배포 (Blue-Green Deployment)
