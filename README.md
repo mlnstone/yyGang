@@ -4,6 +4,7 @@
 두 개의 동일한 환경(**블루**, **그린**)을 준비하여  
 한쪽 환경에서 서비스를 운영하는 동안 다른 환경에 새 버전을 배포합니다.  
 보통 **blue가 현재 운영 중**, **green이 새 버전**을 의미합니다.
+![65c3a844357606c1b08a21f0_Screen-Shot-2021-03-19-at-2 34 46-PM](https://github.com/user-attachments/assets/0ef46c75-a9de-418a-abdf-770a1e03285b)
 
 ---
 
@@ -41,4 +42,3 @@
 kubectl argo rollouts undo rollout rollout-bluegreen -n bluegreen-test
 ```
 
-![65c3a844357606c1b08a21f0_Screen-Shot-2021-03-19-at-2 34 46-PM](https://github.com/user-attachments/assets/0ef46c75-a9de-418a-abdf-770a1e03285b)
