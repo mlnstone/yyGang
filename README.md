@@ -50,11 +50,11 @@ Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확�
 
 ![image](https://github.com/user-attachments/assets/ef9bb4fd-2d13-46c3-b0bf-198991b001bd)
 
-1. HPA에 의해 자동확장 또는 재배포되어 새로운 Pod가 생성된다.  
-2. Kube-scheduler는 기존 Worker node에 새로운 Pod를 할당하려 한다.  
-3. 기존 Worker node에 자원이 부족해 Pod는 Pending 상태가 된다.  
-4. Karpenter는 Pending 상태의 Pod를 감지하고 새로운 Worker node를 생성한다.  
-5. Kube-scheduler가 새 Worker node에 Pending Pod를 배포한다.  
+1. HPA에 의해 자동확장 또는 재배포되어 새로운 Pod가 생성됩니다.
+2. Kube-scheduler는 기존 Worker node에 새로운 Pod를 할당하려 합니다.
+3. 기존 Worker node에 자원이 부족해 Pod는 Pending 상태가 됩니다.  
+4. Karpenter는 Pending 상태의 Pod를 감지하고 새로운 Worker node를 생성합니다.
+5. Kube-scheduler가 새 Worker node에 Pending Pod를 배포합니다.  
 
 ### ✅ 장점  
 - 노드 프로비저닝과 Pod의 노드 바인딩을 직접 처리  
