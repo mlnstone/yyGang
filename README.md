@@ -47,6 +47,8 @@ Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확�
 
 <details>
 <summary>Karpenter</summary>
+![Container Group (aka Pod)](https://github.com/user-attachments/assets/c7a9ded6-8627-4750-9c36-cba9bb7946f5)
+
 
 ### 1. 노드 생성
 
