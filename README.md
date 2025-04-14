@@ -6,6 +6,12 @@ Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확�
 
 ## ✅ 주요 오토스케일링 구성 요소
 
+
+
+---
+
+### 🔹 HPA (Horizontal Pod Autoscaler)  
+---
 ### 🔹 Karpenter  
 노드 수준의 오토스케일링을 담당하며, Pod가 스케줄되지 못하고 Pending 상태일 때 **자동으로 새로운 Worker Node를 생성**합니다.
 
@@ -25,12 +31,7 @@ Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확�
 - 스케일링 속도가 빠름
 - Pod 요구사항에 최적화된 노드 생성
 - 불필요한 노드 종료로 **비용 절감 효과**
-
----
-
-### 🔹 HPA (Horizontal Pod Autoscaler)  
-
-
+  
 ---
 
 # 무중단 배포  
