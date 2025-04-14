@@ -39,5 +39,5 @@
 ## 🔁 그린 → 블루 롤백 명령어
 
 ```bash
-kubectl argo rollouts undo rollout rollout-bluegreen -n bluegreen-test```
+kubectl argo rollouts undo rollout rollout-bluegreen -n bluegreen-test
 
