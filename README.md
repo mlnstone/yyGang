@@ -30,6 +30,9 @@ Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확�
 
 ### 🔹 HPA (Horizontal Pod Autoscaler)  
 
+
+---
+
 # 무중단 배포  
 ## 블루/그린 배포 (Blue-Green Deployment)
 
