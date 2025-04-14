@@ -29,39 +29,6 @@ Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확�
 ---
 
 ### 🔹 HPA (Horizontal Pod Autoscaler)  
-리소스 사용량(CPU, 메모리 등)에 따라 **Pod 개수를 수평적으로 자동 조절**합니다.
-
-> 예: CPU 사용률이 70%를 넘으면 Pod 수를 증가시킴
-
-#### ⚙️ 작동 흐름
-
-1. HPA는 설정된 리소스 기준(CPU, 메모리)을 지속적으로 모니터링합니다.
-2. 사용량이 기준을 초과하거나 미달하면 **Replica 수를 자동 조절**합니다.
-3. Deployment 또는 ReplicaSet의 `replicas` 수를 변경해 Pod 수를 늘리거나 줄입니다.
-
-#### ✅ 장점
-
-- 트래픽 급증 시 자동으로 확장하여 안정성 유지
-- 리소스 낭비 없이 효율적인 운영 가능
-- 다양한 메트릭(Custom Metrics 포함)을 기반으로 동작
-
----
-
-## 💡 HPA + Karpenter 조합
-
-- HPA는 Pod 수를 조절  
-- Karpenter는 Pod를 수용할 수 있도록 **노드를 자동 생성/삭제**  
-→ **Pod와 Node 모두 유연하게 확장/축소 가능**
-
----
-
-## ✨ 예시 명령어
-
-### HPA 생성
-
-```bash
-kubectl autoscale deployment my-app --cpu-percent=50 --min=2 --max=10
-```
 
 # 무중단 배포  
 ## 블루/그린 배포 (Blue-Green Deployment)
