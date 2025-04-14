@@ -41,17 +41,12 @@
 ```bash
 kubectl argo rollouts undo rollout rollout-bluegreen -n bluegreen-test
 ```
-
 # 오토스케일링
 
-Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확장하거나 축소**할 수 있는 다양한 오토스케일링 기능을 제공합니다.  
-대표적으로 **Karpenter**와 **HPA(Horizontal Pod Autoscaler)** 가 있습니다.
+Kubernetes에서는 리소스 상황에 따라 **자동으로 리소스를 확장하거나 축소**할 수 있는 다양한 오토스케일링 기능을 제공합니다.
 
----
-
-## ➤ Karpenter
-
-Karpenter는 Kubernetes 클러스터의 **노드를 자동으로 생성/삭제**하는 클러스터 오토스케일러입니다.
+<details>
+<summary>▶ Karpenter</summary>
 
 ### 1. 노드 생성
 
@@ -60,20 +55,19 @@ Karpenter는 이를 감지해 **새로운 노드를 자동 생성**합니다.
 
 ### 2. 노드 삭제
 
-Karpenter는 불필요하다고 판단되는 노드를 자동으로 삭제합니다.  
-삭제 조건은 사용자가 설정할 수 있습니다.
-
-- 노드에 DaemonSet을 제외한 Pod가 없는 경우
-- 노드 유지시간이 지난 경우
-- 노드를 한 개로 합칠 수 있는 경우
+- DaemonSet 제외한 Pod가 없을 때
+- 노드 유지 시간이 지났을 때
+- 노드를 한 개로 합칠 수 있을 때
 
 ### 3. 스케쥴링
 
-Karpenter는 노드 생성/삭제 시 **직접 Pod를 스케쥴링**합니다.  
-기본 `kube-scheduler`보다 빠르게 반응할 수 있습니다.
+Karpenter는 노드 생성/삭제 시 **직접 Pod를 스케쥴링**합니다.
 
----
+</details>
 
-## ➤ HPA (Horizontal Pod Autoscaler)
+<details>
+<summary>▶ HPA (Horizontal Pod Autoscaler)</summary>
 
-> ✍️ 내용은 추후 작성 예정입니다.
+✍️ 내용은 추후 작성 예정입니다.
+
+</details>
