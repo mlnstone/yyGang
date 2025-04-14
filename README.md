@@ -39,3 +39,6 @@
 
 ```bash
 kubectl argo rollouts undo rollout rollout-bluegreen -n bluegreen-test
+```
+
+![65c3a844357606c1b08a21f0_Screen-Shot-2021-03-19-at-2 34 46-PM](https://github.com/user-attachments/assets/0ef46c75-a9de-418a-abdf-770a1e03285b)
