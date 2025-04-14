@@ -149,6 +149,7 @@ Argo CD는 Git을 기준으로 애플리케이션 상태를 관리하므로, **�
 </details>
 
 
-![image](https://github.com/user-attachments/assets/67c71765-abf2-4703-94fe-3cba6a0b1e6a)
+![image](https://github.com/user-attachments/assets/67c71765-abf2-4703-94fe-3cba6a0b1e6a) ![image](https://github.com/user-attachments/assets/fc41b3c7-2094-4735-ae7f-faba9ab045d7)
+
 
 
